@@ -1,0 +1,52 @@
+<apex:page standardController="Opportunity"  >
+    
+    <apex:includeLightning />    
+    <div id="LightningComponentid" />    
+    <script>
+    window.onload = function() {
+        console.log('Page loaded');
+        //showToast();
+    }
+    $Lightning.use("c:ProductApp", function() {
+        $Lightning.createComponent("c:productListComp",
+                                   
+                                   { 
+                                       successToast: showSuccessToast,
+                                       errorToast: showErrorToast,
+                                       validationToast: showValidationToast,
+                                       recordId: "{!Opportunity.Id}"
+                                   },
+                                   "LightningComponentid",
+                                   function(cmp) {
+                                       console.log('LWC Componenet added in VF page');
+                                   });
+    });
+    function showSuccessToast() {
+        
+        sforce.one.showToast({
+            "title": "Success",
+            "message": "Product added successfully.",
+            "type": "success"
+        });
+        console.log('Hi');
+    }
+    function showErrorToast() {
+        
+        sforce.one.showToast({
+            "title": "Alert!",
+            "message": "Please add the number of Quantity.",
+            "type": "error"
+        });
+        console.log('Hi');
+    }
+    function showValidationToast() {
+        
+        sforce.one.showToast({
+            "title": "Alert!",
+            "message": "We don't have this much quantity in stock.",
+            "type": "error"
+        });
+        console.log('Hi');
+    }
+    </script>
+</apex:page>
