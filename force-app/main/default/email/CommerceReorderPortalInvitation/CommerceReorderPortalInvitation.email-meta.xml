@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invite a contact to a Commerce Reorder Portal.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Commerce Reorder Portal: Invitation</name>
+    <developerName>CommerceReorderPortalInvitation</developerName>
+    <style>none</style>
+    <subject>Welcome to {!Community_Name}</subject>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
