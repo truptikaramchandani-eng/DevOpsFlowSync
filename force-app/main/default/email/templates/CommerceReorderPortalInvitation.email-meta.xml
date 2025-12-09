@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invite a contact to a Commerce Reorder Portal.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Commerce Reorder Portal: Invitation</name>
+    <developerName>CommerceReorderPortalInvitation</developerName>
+    <style>none</style>
+    <subject>Welcome to {!Community_Name}</subject>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+    <emailContent><![CDATA[
+            <html>
+            Dear {!Receiving_User.FirstName},
+            <p>
+            Check out this reorder portal for a simpler way to place repeat orders with {!Organization.Name}. You can view your past orders, modify quantities, place new orders, and view order statuses.
+            </p>
+            <p>
+            Click the link for access: <a href={!Community_URL}>{!Community_Name}</a>
+            Username: {!Receiving_User.Username}
+            </p>
+            Regards,<br>
+            {!User.Name}
+            </html>
+        ]]></emailContent>
+</EmailTemplate>
