@@ -1,0 +1,22 @@
+<aura:component >
+	 <aura:attribute name="count" type="Integer" default="0" />
+
+    <lightning:card title="Aura Counter Component" iconName="utility:dash">
+        <div class="slds-p-around_medium">
+            <h1 class="slds-text-heading_medium">Count: {!v.count}</h1>
+
+            <lightning:button 
+                label="Increment" 
+                variant="brand" 
+                onclick="{!c.increment}"
+                class="slds-m-right_small"
+            />
+
+            <lightning:button 
+                label="Decrement" 
+                variant="destructive" 
+                onclick="{!c.decrement}"
+            />
+        </div>
+    </lightning:card>
+</aura:component>
